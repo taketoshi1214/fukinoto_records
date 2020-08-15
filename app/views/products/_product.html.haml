@@ -1,0 +1,55 @@
+.ShowProduct
+  .Image-Price-Box
+    .photo__box
+      %ul.photo__innner
+        %li
+          = image_tag @product.images.first.image.url, class: "main__image"
+          %ul
+            - @product.images.each do |image|
+              %li
+                = image_tag image.image.url, class: "image__list"
+    .ShoppingBox
+      .ArtistTitleBox
+        Artist
+        .ArtistLabel
+          = @product.artist
+        Title
+        .TitleLabel
+          = @product.title
+      .PriceBox
+        .PriceLabel PRICE :
+        .Price
+          = @product.price
+        .WithTax
+          (税込)
+      .CartBtn
+        = link_to '編集する', "#",class: "CartButton"
+      .AuditionBox
+        試聴はここをクリック(未実装)
+  .ProductBox
+    .InfoBox
+      .category
+        .label GENRE :
+      .category
+        .label LABEL :
+        = @product.label
+      .category
+        .label YEAR :
+        = @product.year
+      .category
+        .label FORMAT :
+        = @product.format
+      .category
+        .label MADE IN :
+        = @product.made_in
+    .ConditionBox
+      .Condition CONDITION
+      .category
+        .conditionlabel VINYL :
+        = @product.vinyl
+      .category
+        .conditionlabel COVER :
+        = @product.jacket
+  .comment
+    .label COMMENT & TRACK LIST
+    = @product.comment_track_list

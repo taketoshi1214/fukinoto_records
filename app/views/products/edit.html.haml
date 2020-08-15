@@ -1,0 +1,66 @@
+%h1 商品登録
+.container
+  = form_with model: [:admins, @product], local: true do |f|
+    .FormField
+      .FormField__label--normal
+        %label アーティスト
+      .form_field__input
+        = f.text_field :artist
+    .FormField
+      .FormField__label--normal
+        = f.label :タイトル
+      .form_field__input
+        = f.text_field :title
+    .FormField
+      .FormField__label--normal
+        = f.label :ジャンル
+      .form_field__input
+        = f.text_field :genre
+    .FormField
+      .FormField__label--normal
+        = f.label :レーベル
+      .form_field__input
+        = f.text_field :label
+    .FormField
+      .FormField__label--normal
+        = f.label :発行年
+      .form_field__input
+        = f.text_field :year
+    .FormField
+      .FormField__label--normal
+        = f.label :フォーマット
+      .form_field__input
+        = f.text_field :format
+    .FormField
+      .FormField__label--normal
+        = f.label :製造国
+      .form_field__input
+        = f.text_field :made_in
+    .FormField
+      .FormField__label--normal
+        = f.label :レコードコンディション
+      .form_field__input
+        = f.text_field :vinyl
+    .FormField
+      .FormField__label--normal
+        = f.label :ジャケットコンディション
+      .form_field__input
+        = f.text_field :jacket
+    .FormField
+      .FormField__label--normal
+        = f.label :価格（税込）
+      .form_field__input
+        = f.text_field :price
+    .FormField
+      .FormField__label--normal
+        = f.label :コメント、トラックリスト
+      .form_field__input
+        = f.text_area :comment_track_list
+    .FormField
+      .FormField__label--normal
+        = f.label :商品画像
+      .form_field__input
+        = f.file_field :image, as: :file
+    .actions
+      = f.submit
+  = link_to '一覧に戻る', admins_products_path

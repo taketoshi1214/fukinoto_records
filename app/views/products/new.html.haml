@@ -1,0 +1,68 @@
+%h1 商品登録
+.container
+  = form_with model: @product, local: true do |f|
+    .imageUpload
+      .prev-content
+      .label-content
+        %label{for: "product_images_attributes_0_image", class: "label-box"}
+          %pre.label-box__text-visible クリックしてファイルをアップロード
+      .hidden-content
+        = f.fields_for :images do |i|
+          = i.file_field :image, class:"hidden-field"
+          %input{class:"hidden-field", type: "file", name: "product[images_attributes][1][image]", id: "product_images_attributes_1_image" }
+          %input{class:"hidden-field", type: "file", name: "product[images_attributes][2][image]", id: "product_images_attributes_2_image" }
+          %input{class:"hidden-field", type: "file", name: "product[images_attributes][3][image]", id: "product_images_attributes_3_image" }
+          %input{class:"hidden-field", type: "file", name: "product[images_attributes][4][image]", id: "product_images_attributes_4_image" }
+    .FormField
+      .FormField__label--normal
+        %label アーティスト
+      .form_field__input
+        = f.text_field :artist
+    .FormField
+      .FormField__label--normal
+        = f.label :タイトル
+      .form_field__input
+        = f.text_field :title
+    .FormField
+      .FormField__label--normal
+        = f.label :レーベル
+      .form_field__input
+        = f.text_field :label
+    .FormField
+      .FormField__label--normal
+        = f.label :発行年
+      .form_field__input
+        = f.text_field :year
+    .FormField
+      .FormField__label--normal
+        = f.label :フォーマット
+      .form_field__input
+        = f.text_field :format
+    .FormField
+      .FormField__label--normal
+        = f.label :製造国
+      .form_field__input
+        = f.text_field :made_in
+    .FormField
+      .FormField__label--normal
+        = f.label :レコードコンディション
+      .form_field__input
+        = f.text_field :vinyl
+    .FormField
+      .FormField__label--normal
+        = f.label :ジャケットコンディション
+      .form_field__input
+        = f.text_field :jacket
+    .FormField
+      .FormField__label--normal
+        = f.label :価格（税込）
+      .form_field__input
+        = f.text_field :price
+    .FormField
+      .FormField__label--normal
+        = f.label :コメント、トラックリスト
+      .form_field__input
+        = f.text_area :comment_track_list
+    .actions
+      = f.submit
+  = link_to '一覧に戻る', products_path
