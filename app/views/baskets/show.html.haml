@@ -1,0 +1,17 @@
+.Cart
+  .CartContainer
+    %h3.CartMainTitle 買い物かごの中身
+    .CartCollection
+      - @products.each do |product|
+        .CartBox
+          .CartTitle
+            .CartName
+              #{product.artist}
+            .CartName
+              #{product.title}
+          .CartPriceBox
+            .CartPrice
+              #{product.price}円
+              = link_to product_delete_in_baskets_path(product), method: :post, data: {confirm: '削除してもいいですか？'} do
+                %span.basket__delete
+                  ✕

@@ -1,0 +1,38 @@
+.Cart{
+  height: 100vh;
+  width: 100vw;
+  padding: 80px 0 100px 0;
+  .CartContainer {
+    li {
+      list-style: none;
+    }
+    span {
+      color: black;
+    }
+    color: black;
+    padding: 50px;
+    border: 1px solid black;
+    margin: 0 auto;
+    width: 700px;
+    height: 100%;
+    .CartMainTitle{
+      margin-bottom: 30px;
+    }
+    .CartCollection {
+      .CartBox{
+        display: flex;
+        justify-content: space-between;
+        .CartTitle {
+          display: flex;
+          margin-left: 10px;
+        }
+        .CartPriceBox {
+          display: flex;
+        }
+        .CartName {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+}

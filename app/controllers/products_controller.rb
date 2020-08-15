@@ -1,18 +1,13 @@
 class ProductsController < ApplicationController
-  before_action :set_product, except: [:index, :new, :create, :delete]
   before_action :show_all_instance, only: [ :edit, :show, :destroy]
 
   def index
-    @products = Product.includes(:images).order('created_at DESC')
+    @products = Product.all
   end
 
   def new
     @product = Product.new
     @product.images.new
-  end
-
-  def show
-    @products = Product.includes(:images)
   end
 
   def create
@@ -27,14 +22,11 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @product = Product.find(params[:id])
     @products = Product.includes(:images)
   end
 
   private
-
-  def set_product
-    @product = Product.find(params[:id])
-  end
 
   def product_params
     params.require(:product).permit(:artist, :title, :year, :format, :made_in, :vinyl, :jacket, :price, :comment_track_list, :label, images_attributes: [:image, :_destroy, :id])
