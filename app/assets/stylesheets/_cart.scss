@@ -22,9 +22,16 @@
       .CartBox{
         display: flex;
         justify-content: space-between;
-        .CartTitle {
+        .CartName {
+          border-bottom: 1px solid black;
           display: flex;
           margin-left: 10px;
+          .CartArtist {
+            
+          }
+          .CartTitle {
+            margin-left: 10px;
+          }
         }
         .CartPriceBox {
           display: flex;

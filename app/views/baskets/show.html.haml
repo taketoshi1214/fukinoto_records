@@ -4,10 +4,10 @@
     .CartCollection
       - @products.each do |product|
         .CartBox
-          .CartTitle
-            .CartName
+          .CartName
+            .CartArtist
               #{product.artist}
-            .CartName
+            .CartTitle
               #{product.title}
           .CartPriceBox
             .CartPrice
@@ -15,3 +15,5 @@
               = link_to product_delete_in_baskets_path(product), method: :post, data: {confirm: '削除してもいいですか？'} do
                 %span.basket__delete
                   ✕
+      .TotalPrice
+        合計金額 #{@total_price} 円
