@@ -66,3 +66,7 @@ gem 'font-awesome-sass'
 gem 'jquery-rails'
 
 gem 'mini_magick'
+
+gem 'stripe'
+
+gem 'dotenv-rails'

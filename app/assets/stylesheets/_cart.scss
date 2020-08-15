@@ -22,8 +22,8 @@
       .CartBox{
         display: flex;
         justify-content: space-between;
+        border-bottom: 1px solid black;
         .CartName {
-          border-bottom: 1px solid black;
           display: flex;
           margin-left: 10px;
           .CartArtist {
@@ -39,6 +39,31 @@
         .CartName {
           margin-left: 5px;
         }
+      }
+      .TotalPrice {
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        .a {
+          
+        }
+        .i {
+          font-weight: bold;
+          margin: 0 5px 0 5px;
+        }
+      }
+    }
+    .ChargesBox {
+      margin: 10px 0;
+      text-align: right;
+    }
+    .BackLinkBox {
+      justify-content: flex-end;
+      .BackLink {
+        display: block;
+        text-align: right;
+        color: black;
       }
     }
   }
