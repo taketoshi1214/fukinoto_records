@@ -23,7 +23,8 @@
         .WithTax
           (税込)
       .CartBtn
-        = link_to '編集する', "#",class: "CartButton"
+        = link_to product_add_to_baskets_path(@product), method: :post do
+          買い物かごに入れる
       .AuditionBox
         試聴はここをクリック(未実装)
   .ProductBox
