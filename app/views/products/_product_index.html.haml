@@ -1,9 +1,8 @@
 .NewArrival
-  = link_to '商品登録', root_path
   .News
     What's News
     .NewsBox
-      7/22 ふきのとう入荷しました！新着情報実装できませんでした！
+      7/22 ふきのとう入荷しました！新着情報実装予定です！！
   .NewArrivalList
     - @products.each do |product|
       = link_to product_path(product.id) do
@@ -15,6 +14,6 @@
             = product.title
           .price
             = product.price
-          .link
-            = link_to '詳細', root_path
-            = link_to '編集', root_path
+          -if admin_signed_in? && current_admin.id == @product.admin_id
+            .Link
+              = link_to "編集", root_path

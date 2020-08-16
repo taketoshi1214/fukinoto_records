@@ -22,9 +22,15 @@
           = @product.price
         .WithTax
           (税込)
-      .CartBtn
-        = link_to product_add_to_baskets_path(@product), method: :post do
-          買い物かごに入れる
+      -if admin_signed_in? && current_admin.id == @product.admin_id
+        .CartBtn
+          = link_to "編集", root_path
+        .CartBtn
+          = link_to "削除", root_path
+      -else
+        .CartBtn
+          = link_to product_add_to_baskets_path(@product), method: :post do
+            買い物かごに入れる 
       .AuditionBox
         試聴はここをクリック(未実装)
   .ProductBox

@@ -1,6 +1,7 @@
-%h1 商品登録
-.container
-  = form_with model: @product, local: true do |f|
+.NewContainer
+  .NewHeader
+    商品出品
+  = form_with model: [:admins, @product], local: true, class: "NewProductFormBox" do |f|
     .imageUpload
       .prev-content
       .label-content
@@ -16,53 +17,43 @@
     .FormField
       .FormField__label--normal
         %label アーティスト
-      .form_field__input
-        = f.text_field :artist
+        = f.text_field :artist, class: "NewProductForm"
     .FormField
       .FormField__label--normal
         = f.label :タイトル
-      .form_field__input
-        = f.text_field :title
+        = f.text_field :title, class: "NewProductForm"
     .FormField
       .FormField__label--normal
         = f.label :レーベル
-      .form_field__input
-        = f.text_field :label
+        = f.text_field :label, class: "NewProductForm"
     .FormField
       .FormField__label--normal
         = f.label :発行年
-      .form_field__input
-        = f.text_field :year
+        = f.text_field :year, class: "NewProductForm"
     .FormField
       .FormField__label--normal
         = f.label :フォーマット
-      .form_field__input
-        = f.text_field :format
+        = f.text_field :format, class: "NewProductForm"
     .FormField
       .FormField__label--normal
         = f.label :製造国
-      .form_field__input
-        = f.text_field :made_in
+        = f.text_field :made_in, class: "NewProductForm"
     .FormField
       .FormField__label--normal
         = f.label :レコードコンディション
-      .form_field__input
-        = f.text_field :vinyl
+        = f.text_field :vinyl, class: "NewProductForm"
     .FormField
       .FormField__label--normal
         = f.label :ジャケットコンディション
-      .form_field__input
-        = f.text_field :jacket
+        = f.text_field :jacket, class: "NewProductForm"
     .FormField
       .FormField__label--normal
         = f.label :価格（税込）
-      .form_field__input
-        = f.text_field :price
+        = f.text_field :price, class: "NewProductForm"
     .FormField
       .FormField__label--normal
         = f.label :コメント、トラックリスト
-      .form_field__input
-        = f.text_area :comment_track_list
+        = f.text_area :comment_track_list, class: "NewProductForm"
     .actions
       = f.submit
-  = link_to '一覧に戻る', products_path
+    = link_to '一覧に戻る', root_path

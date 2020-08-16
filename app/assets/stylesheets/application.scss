@@ -1,4 +1,9 @@
+* {
+  box-sizing: border-box;
+}
 @import "reset";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import "products.scss";
 @import "header.scss";
 @import "new_arrival.scss";
@@ -7,3 +12,6 @@
 @import "product.scss";
 @import "uploads.scss";
 @import "cart.scss";
+@import "flash";
+@import "devise/login.scss";
+
