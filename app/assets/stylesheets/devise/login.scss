@@ -1,0 +1,54 @@
+.SessionsNew {
+  width: 100%;
+  height: 100vh;
+  background-color: #EEEEEE;
+  padding-top: 80px;
+  .LoginBox {
+    border: 1px solid #111111;
+    padding: 40px;
+    width: 450px;
+    margin: auto;
+    margin-top: auto;
+    background-color: white;
+    .RegistrationsLinkBox {
+      text-align: center;
+      .RegistrationsTitle {
+        font-weight: bold;
+      }
+      .NewRegistrationBtn {
+        display: block;
+        border: 1px solid;
+        color: white;
+        background-color: black;
+        height: 50px;
+        line-height: 50px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 16px;
+        margin: 10px 0 25px 0;
+      }
+    }
+    .LogInFormBox {
+      .FormBox {
+        margin-bottom: 15px;
+        .EmailForm {
+          width: 100%;
+          height: 50px;
+          padding: 0 10px;
+          border-radius: 5px;
+        }
+      }
+      .LogInBtn {
+        margin: 10px 0 15px 0;
+        width: 100%;
+        height: 50px;
+        border-radius: 5px;
+        color: white;
+        background-color:  #11943d;
+      }
+      .ForgotPassword {
+        color: blue;
+      }
+    }
+  }
+}
