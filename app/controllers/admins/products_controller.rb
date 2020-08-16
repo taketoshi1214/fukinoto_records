@@ -18,6 +18,7 @@ class Admins::ProductsController < Admins::ApplicationController
     end
   end
 
+
   private
 
   def product_params
