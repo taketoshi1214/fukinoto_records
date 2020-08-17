@@ -30,7 +30,7 @@
 
 購入者アカウントでログイン後、商品詳細ページにて"カートに入れる"をクリックしていただけますと、商品がカートに追加されます。また値段横の×をクリックしますと、カートから商品が削除されます。
 
-<img src="app/assets/images/cart_in.gif" height="500px;" />
+<img src="app/assets/images/cart_in.gif" height="300px;" />
 
 #### ・商品購入機能
 
@@ -42,7 +42,7 @@
 期限： 01 / 2022  
 セキュリティコード：111  
 
-<img src="app/assets/images/charges.gif" height="500px;" />
+<img src="app/assets/images/charges.gif" height="300px;" />
 
 ### 管理者用機能
 
@@ -51,7 +51,7 @@
 商品の出品ができます。  
 商品画像を5枚まで追加できます。
 
-<img src="app/assets/images/new_product.png" height="500px;" />
+<img src="app/assets/images/new_product.png" height="300px;" />
 
 #### ・商品編集機能(実装途中)
 
