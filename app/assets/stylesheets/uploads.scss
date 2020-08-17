@@ -1,33 +1,44 @@
-.NewContainer {
+.FormHeader{
+  background-color:#11943d;
   width: 100%;
-  .NewHeader{
-    width: 100%;
-    height: 100px;
-    background-color: lightgreen;
+  height: 50px;
+  a {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    display: block;
+    font-weight: bold;
+    line-height: 50px;
+    font-size: 18px;
   }
-  .NewProductFormBox{
-    width: 700px;
-    margin: 0 auto;
+}
+.NewFormBox{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 700px;
+  margin: 0 auto;
+  .ProductForm{
     padding: 40px;
     .imageUpload {
+      height: 150px;
+      outline:1px solid black;
       display: block;
-      margin: 16px auto;
       display: flex;
-      flex-wrap: wrap;
       cursor: pointer;
       .prev-content {
         display: flex;
         .preview-box {
           height: 150px;
           width: 124px;
-          .upper-box {
-            height: 124px;
-            width: 100%;
-            img{
+            .upper-box {
+              height: 124px;
+              width: 100%;
+              img{
               width: 124px;
               height: 124px;
             }
-          }
+            }
           .lower-box {
             display: flex;
             text-align: center;
@@ -85,12 +96,33 @@
         }
       }
     }
-    .FormField {
-      width: 100%;
-      height: 50px;
-      margin-bottom: 20px;
-      .NewProductForm {
-        width: 100%;
+    .InputBox{
+      padding: 0 40px;
+      .NewLabelBox{
+        font-size: 15px;
+        margin-top: 5px;
+      }
+      .FormField {
+        margin-top: 5px;
+        .NewProductForm {
+          padding:0 10px;
+          width: 100%;
+        }
+        .NewProductText {
+          width: 100%;
+          padding:0 10px;
+          margin-bottom: 15px;
+        }
+      }
+      .FormBtn {
+        display: flex;
+        justify-content: center;
+        .NewProductSubmit {
+          display: block;
+          width: 300px;
+          height: 50px;
+          border-radius: 5px;
+        }
       }
     }
   }

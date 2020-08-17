@@ -19,7 +19,8 @@
       .PriceBox
         .PriceLabel PRICE :
         .Price
-          = @product.price
+          = @product.price.to_s(:delimited)
+          円
         .WithTax
           (税込)
       -if admin_signed_in? && current_admin.id == @product.admin_id

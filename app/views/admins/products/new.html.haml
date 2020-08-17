@@ -1,59 +1,60 @@
-.NewContainer
-  .NewHeader
-    商品出品
-  = form_with model: [:admins, @product], local: true, class: "NewProductFormBox" do |f|
-    .imageUpload
-      .prev-content
-      .label-content
-        %label{for: "product_images_attributes_0_image", class: "label-box"}
-          %pre.label-box__text-visible クリックしてファイルをアップロード
-      .hidden-content
-        = f.fields_for :images do |i|
-          = i.file_field :image, class:"hidden-field"
-          %input{class:"hidden-field", type: "file", name: "product[images_attributes][1][image]", id: "product_images_attributes_1_image" }
-          %input{class:"hidden-field", type: "file", name: "product[images_attributes][2][image]", id: "product_images_attributes_2_image" }
-          %input{class:"hidden-field", type: "file", name: "product[images_attributes][3][image]", id: "product_images_attributes_3_image" }
-          %input{class:"hidden-field", type: "file", name: "product[images_attributes][4][image]", id: "product_images_attributes_4_image" }
-    .FormField
-      .FormField__label--normal
-        %label アーティスト
-        = f.text_field :artist, class: "NewProductForm"
-    .FormField
-      .FormField__label--normal
-        = f.label :タイトル
-        = f.text_field :title, class: "NewProductForm"
-    .FormField
-      .FormField__label--normal
-        = f.label :レーベル
-        = f.text_field :label, class: "NewProductForm"
-    .FormField
-      .FormField__label--normal
-        = f.label :発行年
-        = f.text_field :year, class: "NewProductForm"
-    .FormField
-      .FormField__label--normal
-        = f.label :フォーマット
-        = f.text_field :format, class: "NewProductForm"
-    .FormField
-      .FormField__label--normal
-        = f.label :製造国
-        = f.text_field :made_in, class: "NewProductForm"
-    .FormField
-      .FormField__label--normal
-        = f.label :レコードコンディション
-        = f.text_field :vinyl, class: "NewProductForm"
-    .FormField
-      .FormField__label--normal
-        = f.label :ジャケットコンディション
-        = f.text_field :jacket, class: "NewProductForm"
-    .FormField
-      .FormField__label--normal
-        = f.label :価格（税込）
-        = f.text_field :price, class: "NewProductForm"
-    .FormField
-      .FormField__label--normal
-        = f.label :コメント、トラックリスト
-        = f.text_area :comment_track_list, class: "NewProductForm"
-    .actions
-      = f.submit
-    = link_to '一覧に戻る', root_path
+.NewFormWrapper
+  .FormHeader
+    = link_to "FukinotoAdmin", admins_root_path, class: "NewHeaderLink"
+  .NewFormBox
+    = form_with model: [:admins, @product], local: true, class: "ProductForm" do |f|
+      .imageUpload
+        .prev-content
+        .label-content
+          %label{for: "product_images_attributes_0_image", class: "label-box"}
+            %pre.label-box__text-visible クリックしてファイルをアップロード
+        .hidden-content
+          = f.fields_for :images do |i|
+            = i.file_field :image, class:"hidden-field"
+            %input{class:"hidden-field", type: "file", name: "product[images_attributes][1][image]", id: "product_images_attributes_1_image" }
+            %input{class:"hidden-field", type: "file", name: "product[images_attributes][2][image]", id: "product_images_attributes_2_image" }
+            %input{class:"hidden-field", type: "file", name: "product[images_attributes][3][image]", id: "product_images_attributes_3_image" }
+            %input{class:"hidden-field", type: "file", name: "product[images_attributes][4][image]", id: "product_images_attributes_4_image" }
+      .InputBox
+        .NewLabelBox
+          %span アーティスト
+        .FormField
+          = f.text_field :artist, class: "NewProductForm"
+        .NewLabelBox
+          %span タイトル
+        .FormField
+          = f.text_field :title, class: "NewProductForm"
+        .NewLabelBox
+          %span レーベル
+        .FormField
+          = f.text_field :label, class: "NewProductForm"
+        .NewLabelBox
+          %span 発行年
+        .FormField
+          = f.number_field :year, class: "NewProductForm"
+        .NewLabelBox
+          %span フォーマット
+        .FormField
+          = f.text_field :format, class: "NewProductForm"
+        .NewLabelBox
+          %span 製造国
+        .FormField
+          = f.text_field :made_in, class: "NewProductForm"
+        .NewLabelBox
+          %span レコードコンディション
+        .FormField
+          = f.text_field :vinyl, class: "NewProductForm"
+        .NewLabelBox
+          %span ジャケットコンディション
+        .FormField
+          = f.text_field :jacket, class: "NewProductForm"
+        .NewLabelBox
+          %span 価格（税込）
+        .FormField
+          = f.number_field :year, class: "NewProductForm"
+        .NewLabelBox
+          %span コメント、トラックリスト
+        .FormField
+          = f.text_area :comment_track_list, class: "NewProductText"
+        .FormBtn
+          = f.submit class: "NewProductSubmit"

@@ -59,8 +59,6 @@
     .FormField
       .FormField__label--normal
         = f.label :商品画像
-      .form_field__input
-        = f.file_field :image, as: :file
     .actions
       = f.submit
   = link_to '一覧に戻る', admins_products_path
