@@ -28,7 +28,7 @@ http://localhost:3000/users/sign_in
 
 ターミナルまたはコマンドプロンプトにて以下のコマンドを順番に実行してください。
 
-git clone https://github.com/taketoshi1214/fukinoto_records.git
+`git clone https://github.com/taketoshi1214/fukinoto_records.git`
 
 cd 任意のディレクトリ(フォルダ)を指定してください。
 
