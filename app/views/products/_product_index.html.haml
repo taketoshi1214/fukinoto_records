@@ -14,6 +14,3 @@
             = product.title
           .price
             = product.price
-          -if admin_signed_in? && current_admin.id == @product.admin_id
-            .Link
-              = link_to "編集", root_path
