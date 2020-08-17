@@ -44,7 +44,8 @@
 
 商品の出品ができます。  
 商品画像を5枚まで追加できます。
-<img src="images/new_product.png" height="100px;" />
+
+<img src="app/assets/images/new_product.png" height="100px;" />
 
 #### ・商品編集機能(実装途中)
 
