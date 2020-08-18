@@ -1,3 +1,16 @@
 .Header
   .TopLink
     = link_to 'FukinotoRecords', root_path
+  .HeaderMenu
+    .HeaderCart
+      - if current_user.present?
+        = link_to 'カートの中身を見る', basket_path
+      - else
+        = link_to '新規登録', '#'
+    .HeaderSession
+      - if current_user.present?
+        = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "HeaderLogOut"
+      - elsif current_admin.present?
+        = link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: "HeaderLogOut"
+      - else
+        = link_to "ログイン", new_user_session_path
