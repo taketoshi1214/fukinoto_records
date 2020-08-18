@@ -4,7 +4,7 @@
       %ul.photo__innner
         %li
           = image_tag @product.images.first.image.url, class: "main__image"
-          %ul
+          %ul.ImageFlame
             - @product.images.each do |image|
               %li
                 = image_tag image.image.url, class: "image__list"
@@ -25,13 +25,12 @@
           (税込)
       -if admin_signed_in? && current_admin.id == @product.admin_id
         .CartBtn
-          = link_to "編集", edit_admins_product_path
+          = link_to "編集", edit_admins_product_path, class: "CartBtnLink"
         .CartBtn
-          = link_to "削除", root_path
+          = link_to "削除できません", root_path, class: "CartBtnLink"
       -else
         .CartBtn
-          = link_to product_add_to_baskets_path(@product), method: :post do
-            カートに入れる 
+          = link_to "カートに入れる", product_add_to_baskets_path(@product), class: "CartBtnLink", method: :post
       .AuditionBox
         試聴はここをクリック(未実装)
   .ProductBox

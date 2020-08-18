@@ -22,9 +22,10 @@ class Admins::ProductsController < Admins::ApplicationController
   end
 
   def update
+    @product = Product.find(params[:id])
     if product_params[:images_attributes].nil?
       flash[:alert] = '画像を１枚以上入れてください'
-      redirect_to edit_product_path
+      redirect_to edit_admins_product_path
     else
       exit_ids = []
       product_params[:images_attributes].each do |a,b|
@@ -33,7 +34,6 @@ class Admins::ProductsController < Admins::ApplicationController
       ids = Image.where(product_id: params[:id]).map{|image| image.id }
       delete__db = ids - exit_ids
       Image.where(id:delete__db).destroy_all
-      @product.touch
       if @product.update(product_params)
          redirect_to root_path
       else
@@ -47,7 +47,7 @@ class Admins::ProductsController < Admins::ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:artist, :title, :year, :format, :made_in, :vinyl, :jacket, :price, :comment_track_list, :label, images_attributes: [:image, :_destroy, :id])
+    params.require(:product).permit(:artist, :title, :year, :format, :made_in, :vinyl, :jacket, :price, :comment_track_list, :label, images_attributes: [:image, :_destroy, :id]).merge(admin_id: current_admin.id)
   end
 
   def show_all_instance

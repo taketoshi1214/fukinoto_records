@@ -1,7 +1,22 @@
 .NewFormWrapper
   .FormHeader
+    = link_to "FukinotoAdmin", admins_root_path, class: "NewHeaderLink"
   .NewFormBox
     = form_with model: [:admins, @product], local: true, class: "ProductForm" do |f|
+      #image-box-1{class:"#{@images.last.id}"}
+        - @images.each do |img|
+          .item-image{id:img.id}
+            = image_tag(img.image.url)
+            .item-image__operetion
+              .item-image__operetion--edit__delete__hidden 削除
+        %label.img-label{for: "img-file"}
+          = icon('fas', 'camera', class: 'UploadCamera')
+          .displayhide
+            #image-box__container{class:"item-num-#{@images.length}"}
+              #append-js-edit
+                = f.fields_for :images do |image|
+                  .js-file_group{"data-index" => "#{image.index}"}
+                    = image.file_field :image, type: 'file', value:"#{image.object.id}",style: "",  id:"img-file", class:'js-file-edit',name: "product[images_attributes][#{@product.images.count}][image]", data:{index:""}
       .InputBox
         .NewLabelBox
           %span アーティスト

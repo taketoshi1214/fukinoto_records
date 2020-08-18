@@ -83,6 +83,9 @@
             pointer-events: none;
             white-space: pre-wrap;
             word-wrap: break-word;
+                              i {
+                                font-size: 24px;
+                              }
           }
         }
       }
@@ -97,13 +100,13 @@
       }
     }
     .InputBox{
+      margin-top: 20px;
       padding: 0 40px;
       .NewLabelBox{
         font-size: 15px;
         margin-top: 5px;
       }
       .FormField {
-        margin-top: 5px;
         .NewProductForm {
           padding:0 10px;
           width: 100%;
