@@ -60,10 +60,12 @@ http://localhost:3000/admins/products/new
 
 <img src="app/assets/images/new_product.png" height="300px;" />
 
-#### ・商品編集機能(実装途中)
+#### ・商品編集機能
 
-出品した商品の編集ができます。  
-実装中です。  
+出品した商品の編集ができます。    
+管理者用アカウントでログイン後、商品の詳細ページにアクセスしていただけますと、商品編集ボタンがございますので、そこをクリックしていただけますと、商品が編集できます。
+
+<img src="app/assets/images/edit_product.gif" height="300px;" />
 
 # 構築やインストール方法
 
