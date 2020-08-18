@@ -18,6 +18,31 @@ class Admins::ProductsController < Admins::ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if product_params[:images_attributes].nil?
+      flash[:alert] = '画像を１枚以上入れてください'
+      redirect_to edit_product_path
+    else
+      exit_ids = []
+      product_params[:images_attributes].each do |a,b|
+        exit_ids << product_params[:images_attributes].dig(:"#{a}",:id).to_i
+      end
+      ids = Image.where(product_id: params[:id]).map{|image| image.id }
+      delete__db = ids - exit_ids
+      Image.where(id:delete__db).destroy_all
+      @product.touch
+      if @product.update(product_params)
+         redirect_to root_path
+      else
+        flash[:alert] = '更新できませんでした'
+        render :edit
+      end
+    end
+  end
+
 
   private
 
@@ -26,6 +51,7 @@ class Admins::ProductsController < Admins::ApplicationController
   end
 
   def show_all_instance
+    @product = Product.find(params[:id])
     @images = Image.where(product_id: params[:id])
     @images_first = Image.where(product_id: params[:id]).first
   end

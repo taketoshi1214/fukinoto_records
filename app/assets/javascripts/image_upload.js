@@ -39,15 +39,6 @@ $(function(){
       $('.label-box').attr({for: `product_images_attributes_${count}_image`});
     }
   }
-  //====================================================
-  //編集ページ(products/:i/edit)へリンクした際のアクション
-  //====================================================
-  if (window.location.href.match(/\/products\/\d+\/edit/)){
-    //プレビューの数を取得
-    var count = $('.preview-box').length;
-    //countに応じてラベルのwidth・id・forの値を変更
-    setLabel(count) 
-  }
 
   //プレビューの追加
   //hidden-fielsの値が変更したとき発火

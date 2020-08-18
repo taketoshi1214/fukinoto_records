@@ -25,7 +25,7 @@
           (税込)
       -if admin_signed_in? && current_admin.id == @product.admin_id
         .CartBtn
-          = link_to "編集", root_path
+          = link_to "編集", edit_admins_product_path
         .CartBtn
           = link_to "削除", root_path
       -else
