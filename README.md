@@ -49,7 +49,10 @@
 #### ・商品出品機能
 
 商品の出品ができます。  
-商品画像を5枚まで追加できます。
+商品画像を5枚まで追加できます。  
+以下のURLでログインしていただけますと、商品出品画面に遷移します。
+
+http://localhost:3000/admins/sign_in 
 
 <img src="app/assets/images/new_product.png" height="300px;" />
 
