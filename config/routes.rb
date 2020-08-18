@@ -13,6 +13,6 @@ Rails.application.routes.draw do
 
   namespace :admins do
     root to: "dashboards#index"
-    resources :products, only: %i(new create)
+    resources :products
   end
 end

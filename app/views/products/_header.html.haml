@@ -6,7 +6,7 @@
       - if current_user.present?
         = link_to 'カートの中身を見る', basket_path
       - else
-        = link_to '新規登録', '#'
+        = link_to '新規会員登録',new_user_registration_path
     .HeaderSession
       - if current_user.present?
         = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "HeaderLogOut"

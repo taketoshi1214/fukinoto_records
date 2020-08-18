@@ -15,10 +15,14 @@
         }
         ul{
           display: flex;
+          outline: 1px solid lightgray;
           .image__list{
             width: 60px;
             height: 60px;
             object-fit: cover;
+          }
+          li {
+            height: 60px;
           }
         }
       }
@@ -62,6 +66,8 @@
         a {
           text-decoration: none;
           color: white;
+          display: inline-block;
+          width: 100%;
         }
         }
     }

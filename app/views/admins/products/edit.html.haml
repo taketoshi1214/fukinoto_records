@@ -1,64 +1,62 @@
-%h1 商品登録
-.container
-  = form_with model: [:admins, @product], local: true do |f|
-    .FormField
-      .FormField__label--normal
-        %label アーティスト
-      .form_field__input
-        = f.text_field :artist
-    .FormField
-      .FormField__label--normal
-        = f.label :タイトル
-      .form_field__input
-        = f.text_field :title
-    .FormField
-      .FormField__label--normal
-        = f.label :ジャンル
-      .form_field__input
-        = f.text_field :genre
-    .FormField
-      .FormField__label--normal
-        = f.label :レーベル
-      .form_field__input
-        = f.text_field :label
-    .FormField
-      .FormField__label--normal
-        = f.label :発行年
-      .form_field__input
-        = f.text_field :year
-    .FormField
-      .FormField__label--normal
-        = f.label :フォーマット
-      .form_field__input
-        = f.text_field :format
-    .FormField
-      .FormField__label--normal
-        = f.label :製造国
-      .form_field__input
-        = f.text_field :made_in
-    .FormField
-      .FormField__label--normal
-        = f.label :レコードコンディション
-      .form_field__input
-        = f.text_field :vinyl
-    .FormField
-      .FormField__label--normal
-        = f.label :ジャケットコンディション
-      .form_field__input
-        = f.text_field :jacket
-    .FormField
-      .FormField__label--normal
-        = f.label :価格（税込）
-      .form_field__input
-        = f.text_field :price
-    .FormField
-      .FormField__label--normal
-        = f.label :コメント、トラックリスト
-      .form_field__input
-        = f.text_area :comment_track_list
-    .FormField
-      .FormField__label--normal
-        = f.label :商品画像
-    .actions
-      = f.submit
-  = link_to '一覧に戻る', admins_products_path
+.NewFormWrapper
+  .FormHeader
+    = link_to "FukinotoAdmin", admins_root_path, class: "NewHeaderLink"
+  .NewFormBox
+    = form_with model: [:admins, @product], local: true, class: "ProductForm" do |f|
+      #image-box-1{class:"#{@images.last.id}"}
+        - @images.each do |img|
+          .item-image{id:img.id}
+            = image_tag(img.image.url)
+            .item-image__operetion
+              .item-image__operetion--edit__delete__hidden 削除
+        %label.img-label{for: "img-file"}
+          = icon('fas', 'camera', class: 'UploadCamera')
+          .displayhide
+            #image-box__container{class:"item-num-#{@images.length}"}
+              #append-js-edit
+                = f.fields_for :images do |image|
+                  .js-file_group{"data-index" => "#{image.index}"}
+                    = image.file_field :image, type: 'file', value:"#{image.object.id}",style: "",  id:"img-file", class:'js-file-edit',name: "product[images_attributes][#{@product.images.count}][image]", data:{index:""}
+      .InputBox
+        .NewLabelBox
+          %span アーティスト
+        .FormField
+          = f.text_field :artist, class: "NewProductForm"
+        .NewLabelBox
+          %span タイトル
+        .FormField
+          = f.text_field :title, class: "NewProductForm"
+        .NewLabelBox
+          %span レーベル
+        .FormField
+          = f.text_field :label, class: "NewProductForm"
+        .NewLabelBox
+          %span 発行年
+        .FormField
+          = f.number_field :year, class: "NewProductForm"
+        .NewLabelBox
+          %span フォーマット
+        .FormField
+          = f.text_field :format, class: "NewProductForm"
+        .NewLabelBox
+          %span 製造国
+        .FormField
+          = f.text_field :made_in, class: "NewProductForm"
+        .NewLabelBox
+          %span レコードコンディション
+        .FormField
+          = f.text_field :vinyl, class: "NewProductForm"
+        .NewLabelBox
+          %span ジャケットコンディション
+        .FormField
+          = f.text_field :jacket, class: "NewProductForm"
+        .NewLabelBox
+          %span 価格（税込）
+        .FormField
+          = f.number_field :year, class: "NewProductForm"
+        .NewLabelBox
+          %span コメント、トラックリスト
+        .FormField
+          = f.text_area :comment_track_list, class: "NewProductText"
+        .FormBtn
+          = f.submit class: "NewProductSubmit"

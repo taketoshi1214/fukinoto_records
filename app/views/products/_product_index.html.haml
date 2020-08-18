@@ -13,4 +13,5 @@
           .title
             = product.title
           .price
-            = product.price
+            = product.price.to_s(:delimited)
+            円
