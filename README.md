@@ -54,7 +54,7 @@
 
 http://localhost:3000/admins/sign_in 
 
-追加で商品を出品する場合は以下のURLにアクセスしていただけますと、新たに出品ができます。
+追加で商品を出品する場合は、以下のURLにアクセスしていただけますと、新たに出品ができます。
 
 http://localhost:3000/admins/products/new
 
