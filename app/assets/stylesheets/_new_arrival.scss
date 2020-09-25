@@ -1,26 +1,33 @@
 .NewArrival {
-  width: calc(100vw - 200px);
+  width: calc(100vw - 250px);
   font-size: 20px;
+  .NewTitle {
+    font-weight: bold;
+  }
   .News{
     .NewsBox{
-      margin: 10px 0;
-      padding-left: 20px;
+      font-size: 18px;
+      overflow: scroll;
+      margin: 15px 0;
     }
   }
   .NewArrivalList{
-    display: flex;
-    font-size: 12px;
-    a {
-      text-decoration: none;
-      color: black;
-    }
-    .Product {
-      width: 200px;
-      height: 250px;
-      font-weight: bold;
-      .picture {
-        width: 160px;
-        height: 160px;
+    .ProductIndexBox {
+      margin-top: 15px;
+      display: flex;
+      font-size: 13px;
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      .Product {
+        width: 200px;
+        height: 250px;
+        font-weight: bold;
+        .picture {
+          width: 160px;
+          height: 160px;
+        }
       }
     }
   }

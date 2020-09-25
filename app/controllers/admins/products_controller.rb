@@ -2,6 +2,11 @@ class Admins::ProductsController < Admins::ApplicationController
 
   before_action :show_all_instance, only: [ :edit, :show, :destroy]
 
+  def index
+    @messages = Message.all
+    @products = Product.all
+  end
+
   def new
     @product = current_admin.products.build
     @product.images.new

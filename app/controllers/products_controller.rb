@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
+    @messages = Message.all.order('created_at DESC')
   end
 
   def show

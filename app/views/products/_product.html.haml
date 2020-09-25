@@ -26,8 +26,6 @@
       -if admin_signed_in? && current_admin.id == @product.admin_id
         .CartBtn
           = link_to "編集", edit_admins_product_path, class: "CartBtnLink"
-        .CartBtn
-          = link_to "削除できません", root_path, class: "CartBtnLink"
       -else
         .CartBtn
           = link_to "カートに入れる", product_add_to_baskets_path(@product), class: "CartBtnLink", method: :post
