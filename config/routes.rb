@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   end
 
   namespace :admins do
-    root to: "products#new"
+    root to: "products#index"
     resources :products
+    resources :messages
   end
 end

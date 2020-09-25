@@ -1,0 +1,12 @@
+.NewFormWrapper
+  .FormHeader
+    = link_to "FukinotoAdmin", admins_root_path, class: "NewHeaderLink"
+  .NewFormBox
+    = form_with model: [:admins, @message], local: true, class: "ProductForm" do |f|
+      .InputBox
+        .NewLabelBox
+          %span 新着情報
+        .FormField
+          = f.text_field :content, class: "NewProductForm"
+        .FormBtn
+          = f.submit class: "NewProductSubmit"

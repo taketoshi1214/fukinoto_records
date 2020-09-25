@@ -1,0 +1,13 @@
+.wrapper
+  .FormHeader
+    = link_to "FukinotoAdmin", admins_root_path, class: "NewHeaderLink"
+  .HeaderSession
+    - if current_user.present?
+      = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "HeaderLogOut"
+    - elsif current_admin.present?
+      = link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: "HeaderLogOut"
+    - else
+      = link_to "ログイン", new_user_session_path
+  .main
+    = render "products/side_bar"
+    = render "admin_products"
