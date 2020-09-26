@@ -48,7 +48,8 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
+
   <<: *default
-  database: fukinoto_records_production
-  username: fukinoto_records
-  password: <%= ENV['FUKINOTO_RECORDS_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
