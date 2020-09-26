@@ -1,14 +1,7 @@
 Rails.application.routes.draw do
   
-  devise_for :admins, controllers: {
-    sessions:      'admins/sessions',
-    passwords:     'admins/passwords',
-  }
-  devise_for :users, controllers: {
-    sessions:      'users/sessions',
-    passwords:     'users/passwords',
-    registrations: 'users/registrations'
-  }
+  devise_for :admins
+  devise_for :users
 
   root 'products#index'
   resource :basket
