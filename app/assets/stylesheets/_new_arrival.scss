@@ -8,7 +8,10 @@
     .NewsBox{
       font-size: 18px;
       overflow: scroll;
-      margin: 15px 0;
+      margin: 10px 0;
+      .NewsContent {
+        margin-bottom: 5px;
+      }
     }
   }
   .NewArrivalList{
