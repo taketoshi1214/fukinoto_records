@@ -1,4 +1,16 @@
 class Product < ApplicationRecord
+  validates :images, presence: true
+  validates :title,
+            :artist,
+            :label,
+            :year,
+            :format,
+            :made_in,
+            :vinyl,
+            :jacket,
+            :price,
+            :comment_track_list,
+            presence: true
 
   has_many :images, dependent: :destroy
   has_many :basket_products, dependent: :destroy
@@ -6,5 +18,6 @@ class Product < ApplicationRecord
   belongs_to :admin
 
   accepts_nested_attributes_for :images, allow_destroy: true
+
 
 end

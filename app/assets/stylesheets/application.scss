@@ -4,6 +4,7 @@
 @import "reset";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "mix-in";
 @import "products.scss";
 @import "header.scss";
 @import "new_arrival.scss";
@@ -14,4 +15,5 @@
 @import "cart.scss";
 @import "flash";
 @import "devise/login.scss";
+@import "devise/admin_login.scss";
 @import "edit_image.scss";
