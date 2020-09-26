@@ -3,8 +3,9 @@
     .NewTitle What's News
     .NewsBox
       - @messages.each do |message|
-        = message.created_at.strftime('%Y/%m/%d')
-        = message.content
+        .NewsContent
+          = message.created_at.strftime('%Y/%m/%d')
+          = message.content
   .NewArrivalList
     .NewTitle New Arrival
     .ProductIndexBox
