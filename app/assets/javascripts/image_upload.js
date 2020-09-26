@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', $(function(){
+$(document).on('turbolinks:load', function(){
   //================================================================
   //共通の定数を定義
   //==================================================================
@@ -81,5 +81,4 @@ $(document).on('turbolinks:load', $(function(){
     //countに応じてラベルのwidth・id・forの値を変更
     setLabel(count);
   });
-})
-);
+});
