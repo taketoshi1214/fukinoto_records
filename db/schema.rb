@@ -61,12 +61,12 @@ ActiveRecord::Schema.define(version: 2020_09_22_090612) do
     t.string "title", null: false
     t.string "artist", null: false
     t.string "label", null: false
-    t.decimal "year", precision: 10, null: false
+    t.integer "year", null: false
     t.string "format", null: false
     t.string "made_in", null: false
     t.string "vinyl", null: false
     t.string "jacket", null: false
-    t.decimal "price", precision: 10, null: false
+    t.integer "price", null: false
     t.text "comment_track_list", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
