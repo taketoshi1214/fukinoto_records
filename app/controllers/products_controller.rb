@@ -2,8 +2,8 @@ class ProductsController < ApplicationController
   before_action :show_all_instance, only: [ :edit, :show, :destroy]
 
   def index
-    @products = Product.all
-    @messages = Message.all.order('created_at DESC')
+    @products = Product.all.order('created_at DESC').first(5)
+    @messages = Message.all.order('created_at DESC').first(3)
   end
 
   def show
