@@ -1,0 +1,11 @@
+.SessionsNew
+  .LoginBox
+    .AdminLogInTitle 管理者ログイン
+    .LogInForm
+      .LogInFormBox
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .FormBox
+            = f.email_field :email, placeholder: "メールアドレス", class: "EmailForm"
+          .FormBox
+            = f.password_field :password, placeholder: "パスワード", class: "EmailForm"
+          = f.submit "ログイン", class:"LogInBtn"

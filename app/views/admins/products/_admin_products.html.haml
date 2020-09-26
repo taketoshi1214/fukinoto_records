@@ -1,12 +1,12 @@
 .NewArrival
   .News
-    .NewTitle What's News
+    .NewTitle 新着情報一覧
     .NewsBox
       - @messages.each do |message|
         = message.created_at.strftime('%Y/%m/%d')
         = message.content
   .NewArrivalList
-    .NewTitle New Arrival
+    .NewTitle 商品一覧
     .ProductIndexBox
       - @products.each do |product|
         = link_to product_path(product.id) do

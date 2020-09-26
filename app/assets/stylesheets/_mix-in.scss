@@ -1,0 +1,27 @@
+// devise
+@mixin SessionsNew {
+  width: 100%;
+  height: 100vh;
+  background-color: #EEEEEE;
+  padding-top: 80px;
+}
+
+@mixin LogInFormBox{ 
+  .FormBox {
+    margin-bottom: 15px;
+    .EmailForm {
+      width: 100%;
+      height: 50px;
+      padding: 0 10px;
+      border-radius: 5px;
+    }
+  }
+  .LogInBtn {
+    margin: 10px 0 15px 0;
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    color: white;
+    background-color:  #11943d;
+  }
+}

@@ -1,0 +1,25 @@
+.SideBar
+  .Category 管理者機能
+  %ul
+    %li
+      = link_to '新着情報通知', new_admins_message_path, class: 'SideBarGenre'
+    %li
+      = link_to '商品登録', new_admins_product_path, class: 'SideBarGenre'
+  .Category 商品カテゴリ
+  %ul
+    %li
+      = link_to '新着商品', '#', class: 'SideBarGenre'
+    %li
+      = link_to 'ジャズ', '#', class: 'SideBarGenre'
+    %li
+      = link_to 'ファンク', '#', class: 'SideBarGenre'
+    %li
+      = link_to 'ソウル', '#', class: 'SideBarGenre'
+    %li
+      = link_to 'ディスコ', '#', class: 'SideBarGenre'
+    %li
+      = link_to 'ハウス', '#', class: 'SideBarGenre'
+    %li
+      = link_to 'ヒップホップ', '#', class: 'SideBarGenre'
+    %li
+      = link_to 'その他', '#', class: 'SideBarGenre'
