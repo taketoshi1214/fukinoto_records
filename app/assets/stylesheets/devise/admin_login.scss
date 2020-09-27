@@ -1,5 +1,9 @@
 .SessionsNew {
   @include SessionsNew;
+  a {
+    text-decoration: none;
+    color: black;
+  }
   .AdminLogInTitle {
     text-align: center;
     font-weight: bold;

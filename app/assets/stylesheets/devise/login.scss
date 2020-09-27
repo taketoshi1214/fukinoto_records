@@ -28,8 +28,12 @@
     .LogInFormBox {
       @include LogInFormBox;
       .ForgotPassword {
-        color: blue;
+        color: black;
       }
+    }
+    a {
+      color: black;
+      text-decoration: none;
     }
   }
 }
