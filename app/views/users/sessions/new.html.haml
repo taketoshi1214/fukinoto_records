@@ -2,7 +2,7 @@
   .LoginBox
     .RegistrationsLinkBox
       %p.RegistrationsTitle アカウントをお持ちでない方はこちら
-      = link_to new_user_registration_path, class: "NewRegistrationBtn" do
+      = link_to "#", class: "NewRegistrationBtn" do
         新規会員登録
     .LogInForm
       .LogInFormBox
@@ -12,5 +12,4 @@
           .FormBox
             = f.password_field :password, placeholder: "パスワード", class: "EmailForm"
           = f.submit "ログイン", class:"LogInBtn"
-          = link_to new_user_password_path, class:"ForgotPassword" do
-            パスワードをお忘れの方はこちら
+    = link_to "トップへ戻る", root_path
