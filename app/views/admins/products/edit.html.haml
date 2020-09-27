@@ -1,6 +1,4 @@
 .NewFormWrapper
-  .FormHeader
-    = link_to "FukinotoAdmin", admins_root_path, class: "NewHeaderLink"
   .NewFormBox
     = form_with model: [:admins, @product], local: true, class: "ProductForm" do |f|
       #image-box-1{class:"#{@images.last.id}"}

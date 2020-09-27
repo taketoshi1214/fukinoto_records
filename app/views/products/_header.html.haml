@@ -1,10 +1,17 @@
 .Header
   .TopLink
-    = link_to 'FukinotoRecords', root_path
+    - if current_user.present?
+      = link_to 'FukinotoRecords', root_path
+    - elsif current_admin.present?
+      = link_to 'FukinotoAdmin', admins_root_path
+    - else
+      = link_to 'FukinotoRecords', root_path
   .HeaderMenu
     .HeaderCart
       - if current_user.present?
-        = link_to 'カートの中身を見る', basket_path
+        = link_to basket_path do
+          = icon('fa', 'shopping-cart')
+          Cart
       - elsif current_admin.present?
         = link_to '管理者用ページ', admins_root_path
       - else
