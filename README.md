@@ -13,6 +13,12 @@
 ・商品を個別に出品できるようにする。  
 ・商品画像を複数枚投稿を可能にする。  
 
+### URL
+
+https://fukinotorecords.herokuapp.com/
+
+### 購入者用アカウント
+
 ### 購入者用アカウント
 メールアドレス: ichiro@user.com  
 パスワード: ichiro16  
