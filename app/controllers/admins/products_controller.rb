@@ -3,7 +3,7 @@ class Admins::ProductsController < Admins::ApplicationController
   before_action :show_all_instance, only: [ :edit, :show, :destroy]
 
   def index
-    @messages = Message.all
+    @messages = Message.all.order('created_at DESC').first(3)
     @products = Product.all
   end
 
@@ -15,7 +15,7 @@ class Admins::ProductsController < Admins::ApplicationController
   def create
     @product = current_admin.products.build(product_params)
     if @product.save
-      redirect_to root_path
+      redirect_to admins_root_path
       flash[:notice] = '出品が完了しました！'
     else
       flash[:alert] = '必須項目を入力してください'

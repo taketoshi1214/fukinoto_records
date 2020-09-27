@@ -1,6 +1,5 @@
 .NewFormWrapper
-  .FormHeader
-    = link_to "FukinotoAdmin", admins_root_path, class: "NewHeaderLink"
+  = render 'admins/products/admin_header'
   .NewFormBox
     = form_with model: [:admins, @message], local: true, class: "ProductForm" do |f|
       .NewMessageBox

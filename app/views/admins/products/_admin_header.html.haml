@@ -1,0 +1,12 @@
+.AdminHeader
+  .TopLink
+    - if current_user.present?
+      = link_to 'FukinotoRecords', root_path
+    - elsif current_admin.present?
+      = link_to 'FukinotoAdmin', admins_root_path
+    - else
+      = link_to 'FukinotoRecords', root_path
+  .HeaderMenu
+    .HeaderSession
+      = link_to 'ユーザー画面へ', root_path, class: "HeaderLogOut"
+      = link_to '管理者ログアウト', destroy_admin_session_path, method: :delete, class: "HeaderLogOut"

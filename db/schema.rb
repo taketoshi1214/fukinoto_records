@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2020_09_22_090612) do
 
   create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "admin_id", null: false
-    t.string "content"
+    t.string "content", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["admin_id"], name: "index_messages_on_admin_id"
